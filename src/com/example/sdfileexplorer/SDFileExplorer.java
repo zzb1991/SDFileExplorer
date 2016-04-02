@@ -24,9 +24,9 @@ public class SDFileExplorer extends Activity {
 
 	ListView listView;
 	TextView textView;  
-	//¼ÇÂ¼µ±Ç°µÄ¸¸ÎÄ¼ş¼Ğ
+	//è®°å½•å½“å‰çš„çˆ¶æ–‡ä»¶å¤¹
 	File currentParent;
-	//¼ÇÂ¼µ±Ç°Â·¾¶ÏÂËùÓĞÎÄ¼şµÄÎÄ¼şÊı×é
+	//è®°å½•å½“å‰è·¯å¾„ä¸‹çš„æ‰€æœ‰æ–‡ä»¶çš„æ–‡ä»¶æ•°ç»„
 	File[] currentFiles;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +48,7 @@ public class SDFileExplorer extends Activity {
 				if(currentFiles[position].isFile()) return;
 				File[] temp=currentFiles[position].listFiles();
 				if(temp==null || temp.length==0){
-					Toast.makeText(SDFileExplorer.this, "µ±Ç°Â·¾¶²»¿É·ÃÎÊ»ò¸ÃÂ·¾¶ÏÂÃ»ÓĞÎÄ¼ş", Toast.LENGTH_LONG).show();
+					Toast.makeText(SDFileExplorer.this, "å½“å‰è·¯å¾„ä¸å¯è®¿é—®æˆ–è¯¥è·¯å¾„ä¸‹æ²¡æœ‰æ–‡ä»¶", Toast.LENGTH_LONG).show();
 				}else{
 					currentParent=currentFiles[position];
 					currentFiles=temp;
@@ -89,7 +89,7 @@ public class SDFileExplorer extends Activity {
 				new String[]{"icon","fileName"}, new int[]{R.id.icon,R.id.filename});
 		listView.setAdapter(simpleAdapter);
 		try {
-			textView.setText("µ±Ç°Â·¾¶Îª£º "+currentParent.getCanonicalPath());
+			textView.setText("å½“å‰è·¯å¾„ä¸ºï¼š "+currentParent.getCanonicalPath());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
